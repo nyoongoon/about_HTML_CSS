@@ -20,7 +20,9 @@ HTML과 CSS를 공부하며 알게 된 것들을 기록하는 저장소입니다
 
 ## HTML Tag
 ex)
-- <h1></h1>
+```
+<h1></h1>
+```
 
 ### 리스트
 -ol(순서o)
@@ -28,7 +30,9 @@ ex)
 -li(list item)
 
 ### a tag (anchor)
-- <a href="~"></a>
+```
+<a href="~"></a>
+```
 - a=태그
 - href=속성
 - target 속성 
@@ -36,11 +40,14 @@ ex)
 : target="_blank" -> 새창에서 이동
 
 ### img tag (이미지 태그)
-- <img/> -> 자체 닫기 태그(self closing tag)
+```
+<img/> -> 자체 닫기 태그(self closing tag)
+```
 : src 속성 -> 이미지의 위치 (확장자 정확하게 적기)
 
 
 # HTML문서의 시작
+```
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,7 +57,7 @@ ex)
 
 	</body>	//사용자가 볼 콘텐츠
 </html>
-
+```
 ### <html>
 - html문서임을 알려줌
 - 속성
@@ -58,16 +65,18 @@ ex)
 
 ### <head>
 - 웹사이트의 환경설정 -> 브라우저에서 보이지 않음
-- <title>
-- <meta> 
+- \<title\>
+- \<meta\> 
 : 부가정보. 속성 -> content, name, charset, property..
-ex) <meta property="og:title,type,image,description..." --> (open graph)
-- <link> -> 타이틀에 이미지 삽입.
+```
+<meta property="og:title,type,image,description..." --> (open graph)
+```
+- \<link\> -> 타이틀에 이미지 삽입.
 : rel="shortcut icon"(relationship),sizes="", href="~"
 
 
 # Form tags
-### <input />
+### \<input \/\>
 -  속성들
 : type -> 기본값은 text. ...
 : type = "file" -> accept로 파일 종류 제한 가능  
