@@ -1,9 +1,7 @@
 # about_HTML_CSS
 HTML과 CSS를 공부하며 알게 된 것들을 기록하는 저장소입니다.
 
-# HTML
-
-
+# 1강 (HTML) 
 ### HTML vs CSS
 - HTML 
 : 브라우저에게 콘텐츠가 무엇인지 알려줌
@@ -63,7 +61,7 @@ ex)
 - 속성
 : lang="en" -> 검색엔진들에게 도움을 줌
 
-### <head>
+### \<head\>
 - 웹사이트의 환경설정 -> 브라우저에서 보이지 않음
 - \<title\>
 - \<meta\> 
@@ -109,3 +107,49 @@ ex)
 - 짧은 text를 위한 태그. 요소 자체로는의미가 없음
 
 <br/><br/><br/>
+	
+	
+# 3강 (CSS)
+	
+# CSS의 두가지 방법
+1. HTML 과 CSS 같은 파일에
+- \<head\>안에서 \<style\>태그를 사용. 
+
+2. HTML 과 CSS 다른 파일로 분리
+```
+<link href="url" rel="stylesheet"/> 태그를 통해서 CSS파일 불러오기 
+```
+ cf) rel = relationship
+
+# Writing Our First CSS Lines
+ 
+ cf) CSS의 속성은 property라고 부름 
+ cf) HTML의 속성은 attribute
+
+ - 셀렉터를 지정, 셀렉터 안에 속성 을 명시.
+
+ ``` html
+<style>
+	selector{ 
+		property:value;
+		font-size:20px;
+	}
+</style>
+ 
+ ```
+
+# Cascading의 뜻
+: 브라우저가 CSS코드를 읽을 때 위에서부터 차례로 읽는다는 말.
+
+- 같은 셀렉터가 설정되어있으면 마지막 설정이 브라우저에 표현 됨. 
+
+
+# 3-3 강 Box(Blocks) and Inlines
+- box를 만들면 박스 옆에 또다른 박스가 오지 않음.
+cf) 다른 태그들은 기본적으로 옆에 배치
+### Blocks
+: 옆에 다른 요소가 못 오는 것을 block(box)
+### Inlines
+: 옆에 다른 요소가 올 수 있는 것을 inline
+
+
