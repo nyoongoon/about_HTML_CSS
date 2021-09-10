@@ -152,4 +152,11 @@ cf) 다른 태그들은 기본적으로 옆에 배치
 ### Inlines
 : 옆에 다른 요소가 올 수 있는 것을 inline
 
+# 3-5 강 Collapsing margins
+- 하나의 box의 경계가 다른 box의 경계와 같다면 두 margin은 하나로 취급된다. -> 경계가 만나면 하나로 취급. 
+- 위, 아래쪽에서만 일어남.  
+- 이를 해결하기 위해 padding이라는 개념이 등
 
+# 3-6 강 Paddings and IDs 
+- padding은 box의 경계로부터 '안쪽'에 있는 공간.
+cf) margin은 box의 경계로부터 '바깥'에 있는 공간.
