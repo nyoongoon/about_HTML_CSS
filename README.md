@@ -322,7 +322,7 @@ input
 
 ### attribute selector
 - attribute를 통해 어떤 것이든 선택할 수 있음
-```
+``` CSS
 input[type="password"]{
       background-color: thistle;
 } 
