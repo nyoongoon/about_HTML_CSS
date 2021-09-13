@@ -186,14 +186,14 @@ cf) inline일 경우 넓이와 높이를 가질 수 없기 때문에 -> margin�
 
 ex)
 
-``` html
+``` CSS
 #tomato, #tomato2, #tomato3{
         background-color: tomato;
       }
 ```
 - 요소를 가리킬 수 있으면서도 겹쳐도 되는 방법 -> class
 
-``` html
+``` CSS
 .tomato{
 	
 }	
@@ -214,7 +214,7 @@ ex)
 # 3.10 Flexbox Part One
 - 부모 엘리멘트만 명시해야한다.
 -> flex 부모 
-```html
+```CSS
 body{
 display : flex;
 justify-content: ~;
@@ -229,7 +229,7 @@ vh = Viewport Height
 
 # 3.12 Fixed 
 - ponsiton:fixed
-``` html
+``` CSS
 div{
       position : fixed;
 }
@@ -242,7 +242,7 @@ div{
 - position : relative;
 -> top bottom left right속성 사용가능
 
-``` html
+``` CSS
 .green{
    position: relative;
    top:-10px    
@@ -255,7 +255,7 @@ div{
 -> relative한 부모 기준으로 맨 끝쪽으로 가게 위치 시킴(부모가 relative아니면 body가 relative부모가 됨)
 
 #3.14 Pseudo Selectors part One
-``` html
+``` CSS
 div:first-child{
       background-color: tomato;
 }
@@ -274,7 +274,7 @@ span:nth-child(2n+1){
 ```
 
 # 3.15 Combinators
-``` html
+``` CSS
 p span{ 
       color:teal;
 }
@@ -286,14 +286,14 @@ p span{
 ```
 - 부모인 p를 쓴다음 span을 씀.
 
-``` html
+``` CSS
 div > span{
       text:decoration: underline;
 }
 ```
 - direct children -> 바로 밑 자식에게만 적용
 
-``` html
+``` CSS
 p + span{
        text-decoration: underline;     
 }
@@ -301,14 +301,14 @@ p + span{
 - 형제 요소를 지정할 때. 
 
 # 3.16 Pseudo Selectors part Two
-``` html
+``` CSS
 p ~ span{
         text-decoration: underline;          
 }
 ```
 - 형제관계 (바로 옆에 없어도 됨.)
  
-``` html
+``` CSS
 input{
       border: 1px solid wheat
 }
