@@ -157,6 +157,185 @@ cf) 다른 태그들은 기본적으로 옆에 배치
 - 위, 아래쪽에서만 일어남.  
 - 이를 해결하기 위해 padding이라는 개념이 등
 
-# 3-6 강 Paddings and IDs 
-- padding은 box의 경계로부터 '안쪽'에 있는 공간.
-cf) margin은 box의 경계로부터 '바깥'에 있는 공간.
+# 3.6 Paddings and IDs
+
+### padding 
+: box의 경계로부터 '안쪽'에 있는 공간
+
+cf) margins
+: box의 경계로부터 '바깥쪽'에 있는 공간
+
+
+### css에서 id로 지정
+#first{ (id="first")
+         
+      }
+
+
+# 3.7 Border
+- 거의 한 종류의 보더만 사용.
+
+*{ (모든 요소에 지정)
+	
+} 
+
+- inline에도 border 지정 가능. 
+
+# 3.8 classes
+cf) inline일 경우 넓이와 높이를 가질 수 없기 때문에 -> margin이 좌우만 적용 됨., padding은 상하좌우 적용. 
+
+ex)
+
+``` html
+#tomato, #tomato2, #tomato3{
+        background-color: tomato;
+      }
+```
+- 요소를 가리킬 수 있으면서도 겹쳐도 되는 방법 -> class
+
+``` html
+.tomato{
+	
+}	
+
+	<span class = "tomato">hello</span>
+    <span class = "tomato2">hello</span>
+    <span class = "tomato3">hello</span>
+```
+- 클래스 이름은 중복으로 적용 가능. 
+ 
+# 3.9 Inline Block
+- inline block은 
+-> 높이와 넓이를 갖으면서 좌우 margin갖음.
+-> 요소 옆에 다른 요소가 올 수도 있음
+- display:inline-block;
+- 깔끔하지 못함.(반응형 디자인을 반영 못함)
+
+# 3.10 Flexbox Part One
+- 부모 엘리멘트만 명시해야한다.
+-> flex 부모 
+```html
+body{
+display : flex;
+justify-content: ~;
+}
+```
+-> 계산을 자동으로
+
+- justify-content -> main axis
+- align-items -> cross axis
+
+vh = Viewport Height
+
+# 3.12 Fixed 
+- ponsiton:fixed
+``` html
+div{
+      position : fixed;
+}
+```
+-> 다른 레어어를 부수고 가장 위의 레이어에 위치하게 됨.
+
+# 3.13 Relative Absolute
+- position : static (디폴트)
+
+- position : relative;
+-> top bottom left right속성 사용가능
+
+``` html
+.green{
+   position: relative;
+   top:-10px    
+}
+```
+-> 처음 위치한 곳을 기준으로 수정하는 것. 
+
+
+- position : absolute;
+-> relative한 부모 기준으로 맨 끝쪽으로 가게 위치 시킴(부모가 relative아니면 body가 relative부모가 됨)
+
+#3.14 Pseudo Selectors part One
+``` html
+div:first-child{
+      background-color: tomato;
+}
+div:last-child{
+      background-color: teal;
+}
+span:nth-child(2){
+      background-color: teal;     
+}
+span:nth-child(even){
+      background-color: teal;     
+}
+span:nth-child(2n+1){
+      background-color: teal;     
+}
+```
+
+# 3.15 Combinators
+``` html
+p span{ 
+      color:teal;
+}
+
+<span>hello</span>
+<p> lorem ipsum 
+      <span>inside</span>
+</p> 
+```
+- 부모인 p를 쓴다음 span을 씀.
+
+``` html
+div > span{
+      text:decoration: underline;
+}
+```
+- direct children -> 바로 밑 자식에게만 적용
+
+``` html
+p + span{
+       text-decoration: underline;     
+}
+```
+- 형제 요소를 지정할 때. 
+
+# 3.16 Pseudo Selectors part Two
+``` html
+p ~ span{
+        text-decoration: underline;          
+}
+```
+- 형제관계 (바로 옆에 없어도 됨.)
+ 
+``` html
+input{
+      border: 1px solid wheat
+}
+
+input:required{
+      border:1px solid tomato;
+}
+
+input 
+```
+
+### attribute selector
+- attribute를 통해 어떤 것이든 선택할 수 있음
+```
+input[type="password"]{
+      background-color: thistle;
+} 
+input[placeholder~="name"]{
+      background-color:tomato;
+}
+<input type="text" placeholder="First name"/>
+<input type="text" placeholder="Last name"/>
+```
+- *= "str"
+-> 아무 글자들 사이에서 부분적으로 포함하는 값 찾아서 지정
+- \~= "str" 
+-> 앞뒤에 공백이 있는 상태에서 부분적으로 포함하고 있는 값을 찾아서 지정
+- $="str"
+-> 끝나는 단어를 찾아서 지정.
+
