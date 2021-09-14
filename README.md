@@ -339,3 +339,149 @@ input[placeholder~="name"]{
 - $="str"
 -> 끝나는 단어를 찾아서 지정.
 
+#. 3.17 States 
+- active 
+``` CSS
+button:active{
+	background-color:tomato;	
+}
+```
+- hover
+: 마우스가 커서 위에 있을 때. 
+button:hover{
+	background-color:tomato;	
+}
+
+- focus
+: 키보드나 마우스로 선택되었을 때
+button:focus{
+	background-color:tomato;	
+}
+
+- visited
+: 링크를 방문했던 경우
+ a:focus{
+	background-color:tomato;	
+}
+
+- focus-within
+: focus-within은 focused인 자식을 가진 부모 엘리먼트의 상태 
+form:focus-within{
+	background-color:tomato;	
+}
+
+### state를 다른 엘리먼트와 chain해서 사용가능
+```CSS
+form:hover input{
+	background-color:white;
+}
+```
+- form이 hover가 되어있고 그 안에 input이 있을 떄 적용 됨. 
+```CSS
+form:hover input:focus{
+	background-color:white;
+}
+```
+- - form이 hover가 되어있고 그 안에 input이 focus 되어 있을 떄 적용 됨. 
+
+
+# 3.18 Recap
+
+cf) 수도 엘리먼트 중 ::placeholder
+-> placeholder 꾸미기
+
+``` CSS
+input :: placeholder{
+	color:white;
+}
+```
+-> input의 placeholder를 꾸며준다. 
+
+### selection
+``` CSS
+p::selection
+background-color:grenn;
+```
+-> 텍스트를 셀렉트하면 표현됨. 
+
+# 3.19 Colors and Variables
+cf) background-colo:rgba(레드, 그린, 블루, 투명도);
+
+### :root
+- 모든 엘리먼트의 부모 
+```CSS
+:root{
+	--main-color: #fcce00;
+	(변수 생성하는 작업)
+}
+p{
+	color:var(--main-color);
+}
+```
+
+# 고급 CSS
+# 4.0 Transitions 
+- 어떤 상태에서 다른 상태로 가는 변화를 애니메이션화. 
+- transition이라는 속성은 state가 없는 요소에 붙어야함.
+``` CSS
+a{
+	transition: background-color 10s ease-in-out; 
+}
+a:hover{
+	color: tomato;
+	background-color: wheat;
+}
+- 변하게 될 속성을 지정.
+```
+
+# 4.1 Transitions part Two
+### ease-in function
+- 내장 애니메이션 함수
+### cubiz-bezier
+- 직접 만드는 애니메이션 함수
+
+# 4.2 Transformations
+``` CSS
+ims{
+	transform:rotateY(85deg) rotateX(20deg); rotateZ(20deg);
+}
+```
+-> 3d 작업을 할 수 있음.(픽셀변형)
+-> siblings에 영향을 미치지 않음.
+-> 다른 box element에 영향X. 
+
+# 4.3 Animations part One
+- 애니메이션은 우리가 원하는 만큼 자동적으로 재생할 수 있음.
+``` CSS
+@keyframes superSexyCoinFlip{
+	from{
+		transform:rotateX(0);
+	}
+	to{
+	transform:rotateY(180deg) translateX(100px);
+	}
+}
+img{
+	animation: superSexyCoinFlip 5s ease-in-out; 
+}
+```
+
+# 4.4 Animations part Two
+```CSS
+@keyframes superSexyCoinFlip{
+	0%{
+		transform:rotateX(0);
+	}
+	50%{
+	transform:rotateY(180deg) translateX(100px);
+	}
+	100%{
+		transform: rotateY(0);
+	}
+}
+img{
+	animation: superSexyCoinFlip 5s ease-in-out; 
+}
+``` 
+
+
