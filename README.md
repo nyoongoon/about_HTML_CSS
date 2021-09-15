@@ -484,4 +484,60 @@ img{
 }
 ``` 
 
+# 6.0 Introduction
 
+- .gitignore -> 무시하고 싶은 파일이름을 기록하는 곳.
+
+# 6.2 BEM (Block Element modifier)
+- modifier -> --orange (\_\_가 아니라 --)
+
+``` html
+<a class ="btn btn--bif btn--orange" href="https://css-tricks.com">
+	<span class="btn__price">$9.99</span>
+	<span class="btn__text">Subscribe</span>
+</a>
+```
+
+-> btn__price -> 버튼 밑에 price span
+-> btn--bif -> 큰 버튼 
+
+
+# 6.3 Font Awesme
+- svg 수학적으로 표현된 이미지파일. 
+: heroicons -> 아이콘 모아둔 사이트. 
+: FontAwesome -> 폰트, 아이콘. 
+
+# 6.5 Status Bar CSS 
+### font-family:
+``` CSS
+body{
+	font-family:Oxygen;
+}
+
+```
+
+### css hack
+- 요소 중심에 맞추는 하나의 방식
+``` CSS
+.status-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.status-bar__column:first-child span {
+  margin-right: 5px;
+  width: 33%;
+}
+
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+``` 
