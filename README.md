@@ -151,7 +151,7 @@ ex)
 ### \<label\>
 - form에 question을 추가할 수 있음. 
 - for 속성으로 input의 id를 지정해주어 사용가능. 
-- for 와 같은 값을 가능 input을 작동시켜줌.  
+- for 와 같은 값을 갖는 input을 작동시켜줌.  
 
 ### id 
 - body 안의 어떤 태그에도 넣을 수 있는 속성
