@@ -141,7 +141,7 @@ ex)
 
 
 # Form tags
-### \<input \/\>
+### \<input\>
 -  속성들
 : type -> 기본값은 text. ...
 : type = "file" -> accept로 파일 종류 제한 가능  
