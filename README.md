@@ -72,6 +72,147 @@ HTML \<area\> 태그
 - name : 그룹과 연관지을 이름. 
 <br/><br/>
 
+# Display && Position 
+
+## position
+- 요소에 CSS 속성으로 position을 지정하여 속성의 상대적, 절대적 위치를 지정할 수 있다.
+## position의 속성
+- position : html 요소의 위치를 결정하는 방식을 설정.
+- top : 위치가 설정된 조상 요소의 위로부터의 여백을 설정.
+- right : 위치가 설정된 조상 요소의 오른쪽으로부터의 여백을 설정.
+- bottom : 위치가 설정된 조상 요소의 아래로부터의 여백을 설정.
+- left : 위치가 설정된 조상 요소의 왼쪽으로부터의 여백을 설정.
+- z-index : 겹처지는 요소들이 쌓이는 스택의 순서를 설정.
+- clip : 절대 위치 지정방식으로 위치한 요소를 자름.
+- curosr : 표시되는 마우스 커서의 모양을 설정. 
+
+
+## position 속성
+### position: static
+- top, right, bottom, left 속성값에 영향을 받지 않음.
+- 단순히 웹페이지의 흐름에 따라 차례대로 요소들을 위치.
+- 기본값. 부모 요소를 기준으로 한 위치로써, 자식 엘리먼트의 크기에 따라서 부모 엘리먼트의 크기가 자동으로 변경됨. left, top, right, bottom과 같은 offset은 무시됨.
+### position: relative
+- 해당 html 요소의 기본 위치를 기준으로 위치를 설정.
+- html요소의 기본 위치란 해당 요소가 정적 위치 지정 방식일 때 결정되는 위치.
+- 자기 자신의 위치를 기준으로 한 상대적인 위치로서, top, left, right, bottom 등의 속성값을 지정해 기준 위치로부터 얼마나 떨어진 지점에 해당 요소를 배치할 것인지 지정. 자식 엘리먼트의 크기에 따라서 부모 엘리먼트의 크기가 자동으로 변경되지만, 엘리먼트의 위치에 따라서는 변경되진 않음. 
+### position: absolute
+- absolute 방식은 해당 요소의 바로 상위의 위치가 설정된 조상 요소에 따라 위치를 재조정하는 방식. 
+- cf) 위치가 설정된 요소라는 것은 정적 위치 지정 방식을 제외한 다른 방식으로 위치가 설정된 요소를 의미. 
+- absolute 방식은 fixed 방식이 뷰포트를 기준으로 위치를 결정하는 것과 비슷하게 동작. 
+- 단지 뷰포트를 기준으로 하는 것이 아닌 **위치가 설정된 조상 요소(relative)를 기준**으로 위치를 설정. 
+- 위치가 설정된 **조상요소를 가지지 않는다면 html 문서의 body요소를 기준**으로 위치를 설정. 
+- 부모 요소의 위치를 기준으로 한 상대 위치를 지정. **부모 요소는 relative**이어야 하며 요소의 크기가 부모 요소의 크기에 반영되지 않으므로 주의. 
+### position: fixed
+- 뷰포트를 기준으로 위치를 설정.
+- 웹페이지가 스크롤 되어도 고저우이치로 지정된 요소는 항상 같은 곳에 위치. 
+- 브라우저 창을 기준으로 위치를 지정. 전체 문서를 기준으로 위치가 정해지므로 부모 엘리먼트의 위치와는 무관하며 요소의 크기가 부모 요소의 크기에 반영되지는 않음. 또한 스크롤의 영향을 받지 않고 위치가 고정되므로 주로 특정 UI요소를 브라우저 화면에 고정할 때 사용하게 됨. 
+<br/>
+## display
+- 각각의 요소는 특성에 따라 block 혹은 inline 속성을 가지고 있음. 
+- block : 언제나 새로운 라인에서 시작. 해당 라인의 모든 너비를 차지. div, h1, p, ul, ol, form
+- inline : 새로운 라인에서 시작x. 요소의 너비는 해당 html요소 만큼만 차지. span, a, img
+- cf) display 속성값을 인라인에서 블록으로 변경했더라도, 변경된 요소는 내부에 다른 요소를 포함할 수 없다. 처음부터 display 속성값이 블록인 요소만이 내부에 다른 요소를 포함할 수 있기 때문. 
+- inline-block : 해당 요소 자체는 inline요소 처럼 동작. 요소 내부에서는 block처럼 너비와 높이, 여백을 설정할 수 있음.
+- none
+- flex
+- grid
+## display: flex
+- FlexBox는 UI레이아웃 디자인에 최적화된 모듈. display 속성의 값을 flex로 지정하게 되면 flexbox속성을 사용할 수 있음. 
+- 요소의 크기가 불분명하거나 동적인 경우에도, 각 요소를 정렬할 수 있는 효율적인 방법을 제공. 
+- Container는 Items를 감싸는 부모요소. 각 Item을 정렬하기 위해선 Container가 필수.
+## container 용 속성
+### display 
+- flex Container를 정의
+- display: flex -> Block 특성(수직 쌓임)의 Flex Container를 정의
+- display: inline-flex -> Inline 특성(수평 쌓임)의 Flex Container를 정의
+- 여기서 말하는 수직과 수평 쌓임은 Items가 아니라 **Container**라는 것에 주의. 두 값의 차이는 내부의 Items에는 영향을 주지 않는다. 
+### flex-flow (주축  여777러줄묶음)
+- 이 속성은 단축 속성으로 Flex Items의 주 축(main-axis)을 설정하고 Items의 여러 줄 묶음(줄 바꿈)도 설정함.
+- flex-flox: 주축 여러줄묶음;
+- 사용 예) flex-flow: flex-direction값 flex-wrap값;
+
+### flex-direction : (주 축)
+- Items의 주 축(main-axix)을 설정.
+- item 블럭이 쌓이는 방향을 지정.
+- row (기본값) : Items를 수평축(왼-오)으로 표시
+- row-reverse : Items를 row 반대 축으로
+- column : Items를 수직축으로 표시
+- column-reverse : Items를 column의 반대 축으로 표시
+
+### 주 축(main-axis)과 교차 축(cross-axis)
+- flex-direction 에서 언급했던 주 축과 교차축의 개념.
+- 값 row는 수평축을 의미하므로 이 떄의 주축은 수평, 교차축은 수직.
+- column은 주축은 수직, 교차축은 수평.
+### 시작점(flex-start)와 끝점(flex-end)
+- 설정된 주축에 따라 시작점과 끝점이 달라짐.
+
+
+### flex-wrap : (여러 줄 묶음)
+- Items의 여러 줄 묶음(줄 바꿈)을 설정
+- 아이템들의 크기가 container 크기를 넘어설 경우 크기를 줄일지 말지를 결정.
+- nowrap(기본값) : 모든 Items를 여러 줄로 묶지 않음(한 줄에 표시)
+- wrap : Items를 여러 줄로 묶음
+- wrap-reverse : Items를 wrap의 역 방향으로 여러 줄 묶음.
+
+### justify-content : (정렬방법)
+- 주 축의 정렬 방법을 설정.
+- 각각의 item들이 row 방향으로 차지하는 공간을 지정.
+- flex-start : Items를 시작점으로 정렬
+- flex-end : Items를 끝점으로 정렬
+- center: Items를 가운데 정렬
+- space-between : 시작 Item은 시작점에, 마지막 Item은 끝점에 정렬되고 나머지 Item은 사이에 고르게 정렬 됨. 
+- space-around : Items를 균등한 여백을 포함하여 정렬
+
+### align-content : (정렬방법)
+- 교차축의 정렬방법을 설정.
+- flex-wrap 속성을 통해 Items가 여러 줄이고 여백이 있을 경우만 사용. (Itmes가 한 줄일 경우 align-items 속성을 사용)
+- 각각의 아이템들 정렬하기. 
+- stretch : Container의 교차 축을 채우기 위해 Items을 늘림. 
+- cf) stretch는 교차 축에 해당하는 너비(width 혹은 height)가 값이 auto일 경우 교차 축을 채우기 위해 자동으로 늘어남.
+- flex-start : Items를 시작점으로 정렬
+- flex-end : Items를 끝점으로 정렬
+- center : Items 가운데를 정렬
+- space-between : 시작 Item은 시작점에, 마지막 Item은 끝점에 정렬되고 나머지 Items는 사이에 고르게 정렬됨
+- space-around : Items를 균등한 여백을 포함하여 정렬.
+
+### align-items : (정렬방법)
+- 교차 축에서 Items의 정렬 방법을 설정
+- Items가 한 줄일 경우 많이 사용.
+- Items가 flex-wrap을 통해 여러 줄 일 경우에는 align-content 속성이 우선. 따라서 align-items를 사용하려면 align-content 속성을 기본값으로 설정.
+- 각각의 item들이 column 방향으로 차지하는 공간을 지정.
+- stretch(기본값) : Container의 교차 축을 채우기 위해 Items를 늘림
+- flex-start: Items를 각 줄의 시작점(flex-start)으로 정렬
+- flex-end: Items를 각 줄의 끝점(flex-end)으로 정렬
+- center: Items를 가운데 정렬
+- baseline: Items를 문자 기준선에 정렬
+
+
+## item 용 속성
+- order : Flex Item의 순서를 설정
+- flex : flex-grow, flex-shrink, flex-basis의 단축 속성
+- flex-grow: Flex Item의 증가 너비 비율을 설정
+- flex-shrink: Flex Item의 감소 너비 비율을 설정
+- flex-basis: Flex Item의 (공간 배분 전) 기본 너비 설정
+- align-self: 교차 축에서 Item의 정렬 방법을 설정
+
+### order
+- 아이템 중 우선할 항목을 숫자로 지정. 기본값은 0부터 순차적으로 겨져 있다. 
+### flex: grow shrink basis
+### flex-grow 
+- 아이템이 차지하는 공간의 비율을 지정. 0부터 숫자가 클수록 공간을 많이 차지.
+### flex-shrink
+- 아이템이 차지하는 공간의 비율을 지정. 0부터 숫자가 클수록 공간을 적게 차지.
+### flex-basis
+- 아이템이 차지하는 크기 고정. flex방향에 따라 너비/높이가 지정됨.
+### align-self 
+- 개별 아이템의 align을 지정.
+<br/>
+
+## float
+- float은 이전에 많이 사용하던 방식. 
+- float 되지 않는 요소는 clear: both속성을 이용해 float 해지해야함.
+<br/><br/>
 
 # pseudo element 가상요소 (::before, ::after의 정의)
 ### 가상 클래스
