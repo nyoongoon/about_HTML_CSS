@@ -230,8 +230,21 @@ HTML \<area\> 태그
 ### content=""
 - ::before와 ::after와 함께 쓰이는 content는 가짜 속성.
 - HTML문서에 정보로 포함되지 않은 요소를 CSS에서 새롭게 생성시켜줌.
-<br/><br/><br/><br/>
+<br/><br/>
 
+# Height
+## scrollHeight vs offsetHeight vs clientHeight 
+- 세 속성 모두 정수값으로 표현되며, 마진값은 공통적으로 제외. 
+### scrollHeight
+- 요소에 들어 있는 컨텐츠의 전체 높이. 패딩과 테두리가 포함되고 마진은 제외.
+### offsetHeight
+- 요소의 높이. 패딩, 스크롤 바, 테두리가 포함되고 마진은 제외.
+- CSS로 요소의 높이를 지정할 때 정해지는 높이.
+- box-sizing 모델 속성 값에 따라 패딩과 테두리 값이 제외될 수 있으므로 주의.
+- 요소가 감춤 상태인 경우 0을 반환.
+### clientHeight
+- 요소의 내부 높이. 패딩 값은 포함되며 스크롤바, 테두리, 마진 제외.
+<br/><br/><br/><br/>
 
 # 노마드 클론코딩 1강 (HTML) 
 ### HTML vs CSS
