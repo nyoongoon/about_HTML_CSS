@@ -272,9 +272,40 @@ HTML \<area\> 태그
 ```
 - srcset 속성은 쉼표로 구분된 사용할 이미지들의 경로와 해당 이미지의 원본 크기를 지정.
 - sizes 속성은 쉼표로 구분된 미디어조건과 그에 따라 최적화되어 출력할 이미지 크기를 지정. 
+<br/><br/>
 
+# Image-rendering 속성
+- CSS의 이미지 렌더링 속성은 이미지 스케일링(크기 변경) 알고리즘을 설정함.
+```CSS
+/* Keyword values */
+image-rendering: auto;// 기본값. 최대한 부드러운 이미지로 표현
+image-rendering: crisp-edges; //색상대조와 이미지 표준에 맞게
+image-rendering: pixelated;  nearest-neighbor를 사용하거나 유사한 알고리즘 사용. 픽셀을 기준으로 표시함(smooth 없음!)
+-ms-interpolation-mode: nearest-neighbor;
+
+/* Global values */
+image-rendering: inherit;
+image-rendering: initial;
+image-rendering: revert;
+image-rendering: unset;
+```
+
+### values
+- auto
+- crisp-edges
+- pixelated
+
+### 흐림 문제 해결책
+- 1. 이미지 랜더링 방식을 바꾼다.
+- image-rendering: -webkit-optimize-contrast;
+- 2. z축을 0으로 적용하여 깊이감을 없앤다.
+- transform: translateZ(0);
+- 3. 뒷면을 보이지 않게 함으로써 2번과 유사하게 입체감을 없앤다.
+- backface-visibility: hidden; 
 
 <br/><br/><br/><br/>
+
+
 
 # 노마드 클론코딩 1강 (HTML) 
 ### HTML vs CSS
