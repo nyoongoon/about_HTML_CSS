@@ -335,11 +335,13 @@ alt="Elva dressed as a fairy">
 - 어떤 이미지 크기가 가장 적합한가 알려주는 역할. 
 - 순서대로 먼저 true가 되는 조건이 선택됨.
 - ex) "(max-width: 600px) 480px, 800px"
-- 조건이 true라면 480px가 선택됨.
-
+- 조건이 true라면 480px가 선택됨
 
 
 ### pictures
+- 화면 크기와 레이아웃의 차이에 따라 이미지를 다르게 게 자름 -> 이미지 연출(art direction)
+
+https://webactually.com/2020/07/13/html-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EB%B2%95-%EA%B0%80%EC%9D%B4%EB%93%9C/#Using-picture
 
 
 
