@@ -302,8 +302,51 @@ image-rendering: unset;
 - transform: translateZ(0);
 - 3. 뒷면을 보이지 않게 함으로써 2번과 유사하게 입체감을 없앤다.
 - backface-visibility: hidden; 
+<br/><br/>
+
+
+# Responsive images 반응형 이미지 
+- 다른 넓이를 가진 기기에 맞춰 동작하는 이미지. 
+
+- 기존의 \<img\> 태그는 브라우저가 하나의 소스 파일만 가리키게 되어 있다. 
+
+- 새로운 속성인 srcset과 sizes를 이용하여 여러개의 추가적인 이미지 소스를 제공할 수 있다.
+
+``` javascript
+<img 
+srcset="elva-fairy-480w.jpg 480w,
+        elva-fairy-800w.jpg 800w"
+sizes="(max-width: 600px) 480px,
+            800px"
+src="elva-fairy-800w.jpg"
+alt="Elva dressed as a fairy">
+``` 
+
+
+### srcset
+- 브라우저가 가져올 이미지들의 집합과 정의하고 각각의 사이즈를 정의한다.  
+- ex) elva-fairy-480w.jpg 480w
+- 이미지 파일 이름->  elva-fairy-480w
+- 공백
+- 이미지 본래의 픽셀 너비 -> (480w) ->px가 아님 주의
+
+### sizes
+- 미디어 환경 집합을 정의. 
+- 어떤 이미지 크기가 가장 적합한가 알려주는 역할. 
+- 순서대로 먼저 true가 되는 조건이 선택됨.
+- ex) "(max-width: 600px) 480px, 800px"
+- 조건이 true라면 480px가 선택됨.
+
+
+
+### pictures
+
+
 
 <br/><br/><br/><br/>
+
+
+
 
 
 
