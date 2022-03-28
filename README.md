@@ -344,6 +344,21 @@ alt="Elva dressed as a fairy">
 https://webactually.com/2020/07/13/html-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AC%B8%EB%B2%95-%EA%B0%80%EC%9D%B4%EB%93%9C/#Using-picture
 
 
+<br/><br/>
+
+# 반응형 웹
+- 모바일 : 320px ~ 480 
+- 태블릿 : 768 ~ 1024
+- 데스크탑 : 1024 ~ 
+
+### 뷰포트 설정
+- 메타 뷰포트 태그는 페이지의 크키과 배율을 제어하는 방법에 대한 정보를 브라우저에 제공.
+- 메타뷰포트 값 (width=device-width)을 사용하면 장치에 독립적인 픽셀로 화면 너비를 일치시킬 것을 페이지에 지시.
+- meta tag에 Viewport에 대한 별 내용이 없으면 기본적으로 웹페이지는 980px를 기준으로 렌더링.
+
+
+
+### css 미디어 쿼리 
 
 <br/><br/><br/><br/>
 
